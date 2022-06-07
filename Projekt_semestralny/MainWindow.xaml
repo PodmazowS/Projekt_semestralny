@@ -6,8 +6,28 @@
         xmlns:local="clr-namespace:Projekt_semestralny"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid RenderTransformOrigin="0.447,0.727">
-        <Label Content="Label" HorizontalAlignment="Left" Margin="448,155,0,0" VerticalAlignment="Top" Foreground="#FF0A6127"/>
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="InsertBtn" Content="Insert record" HorizontalAlignment="Left" Margin="106,309,0,0" VerticalAlignment="Top" Height="47" Width="123"/>
+        <Button x:Name="UpdateBtn" Content="Update record" HorizontalAlignment="Left" Margin="271,309,0,0" VerticalAlignment="Top" Height="47" Width="123"/>
+        <Button x:Name="DeleteBtn" Content="Delete record" HorizontalAlignment="Left" Margin="452,309,0,0" VerticalAlignment="Top" Height="47" Width="123" RenderTransformOrigin="1.073,0.272"/>
+        <Button x:Name="ClearBtn" Content="Clear data" HorizontalAlignment="Left" Margin="626,309,0,0" VerticalAlignment="Top" Height="47" Width="123" Click="ClearBtn_Click"/>
+        <TextBox x:Name="Firstname_txt" HorizontalAlignment="Left" Margin="101,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Secondname_txt" HorizontalAlignment="Left" Margin="101,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Email_txt" HorizontalAlignment="Left" Margin="101,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Number_txt" HorizontalAlignment="Left" Margin="101,204,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
+        <Label Content="First name" HorizontalAlignment="Left" Margin="12,46,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
+        <Label Content="Second name" HorizontalAlignment="Left" Margin="4,90,0,0" VerticalAlignment="Top" Height="31" Width="84"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="12,147,0,0" VerticalAlignment="Top" Height="31" Width="11"/>
+        <Label Content="Number" HorizontalAlignment="Left" Margin="12,200,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
+        <TextBox HorizontalAlignment="Left" Margin="309,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="12,143,0,0" VerticalAlignment="Top" Height="30" Width="40"/>
+        <DataGrid x:Name="Datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="351,91,31,206"/>
 
     </Grid>
 </Window>

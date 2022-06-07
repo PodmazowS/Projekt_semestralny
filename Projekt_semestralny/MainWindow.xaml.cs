@@ -24,5 +24,19 @@ namespace Projekt_semestralny
         {
             InitializeComponent();
         }
+
+        public void clearData()
+        {
+            Firstname_txt.Clear();
+            Secondname_txt.Clear();
+            Number_txt.Clear();
+            Email_txt.Clear();
+        }
+
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            clearData();
+
+        }
     }
 }
