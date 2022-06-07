@@ -37,6 +37,7 @@ namespace Projekt_semestralny
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
             dt.Load(sdr);
+            con.Close();
             Datagrid.ItemsSource = dt.DefaultView;
         }
         public void clearData()
@@ -47,10 +48,62 @@ namespace Projekt_semestralny
             Email_txt.Clear();
 
         }
+        public bool isValid()
+        {
+            if(Firstname_txt.Text == String.Empty)
+            {
+                MessageBox.Show("Name is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (Secondname_txt.Text == String.Empty)
+            {
+                MessageBox.Show("Name is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (Number_txt.Text == String.Empty)
+            {
+                MessageBox.Show("Name is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (Email_txt.Text == String.Empty)
+            {
+                MessageBox.Show("Name is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            return true;
+        }
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-            clearData();
+         clearData();
+            
+          
+        }
+
+        private void InsertBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (isValid())
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO FirstTable VALUES (@FirstName, @SecondName, @Number, @Email)", con);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@FirstName", Firstname_txt.Text);
+                    cmd.Parameters.AddWithValue("@SecondName", Secondname_txt.Text);
+                    cmd.Parameters.AddWithValue("@Number", Number_txt.Text);
+                    cmd.Parameters.AddWithValue("@Email", Email_txt.Text);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    LoadGrig();
+                    MessageBox.Show("Seccessfully registered", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
+                    clearData();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
