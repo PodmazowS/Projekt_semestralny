@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="_DESKTOP_TQ55N08DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DESKTOP_TQ55N08DataSet.xsd</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +94,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="_DESKTOP_TQ55N08DataSet.xsc">
+      <DependentUpon>_DESKTOP_TQ55N08DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_DESKTOP_TQ55N08DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_DESKTOP_TQ55N08DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_DESKTOP_TQ55N08DataSet.xss">
+      <DependentUpon>_DESKTOP_TQ55N08DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

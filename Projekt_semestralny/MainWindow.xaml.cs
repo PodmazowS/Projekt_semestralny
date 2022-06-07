@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Projekt_semestralny
 {
@@ -23,20 +25,32 @@ namespace Projekt_semestralny
         public MainWindow()
         {
             InitializeComponent();
+            LoadGrig();
         }
 
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-TQ55N08;Initial Catalog=NewDB;Integrated Security=True");
+
+        public void LoadGrig()
+        {
+            SqlCommand cmd = new SqlCommand("select * from FirstTable", con);
+            DataTable dt = new DataTable();
+            con.Open();
+            SqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            Datagrid.ItemsSource = dt.DefaultView;
+        }
         public void clearData()
         {
             Firstname_txt.Clear();
             Secondname_txt.Clear();
             Number_txt.Clear();
             Email_txt.Clear();
+
         }
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
             clearData();
-
         }
     }
 }

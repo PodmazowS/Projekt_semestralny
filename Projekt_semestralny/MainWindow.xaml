@@ -17,10 +17,10 @@
         <Button x:Name="UpdateBtn" Content="Update record" HorizontalAlignment="Left" Margin="271,309,0,0" VerticalAlignment="Top" Height="47" Width="123"/>
         <Button x:Name="DeleteBtn" Content="Delete record" HorizontalAlignment="Left" Margin="452,309,0,0" VerticalAlignment="Top" Height="47" Width="123" RenderTransformOrigin="1.073,0.272"/>
         <Button x:Name="ClearBtn" Content="Clear data" HorizontalAlignment="Left" Margin="626,309,0,0" VerticalAlignment="Top" Height="47" Width="123" Click="ClearBtn_Click"/>
-        <TextBox x:Name="Firstname_txt" HorizontalAlignment="Left" Margin="101,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
-        <TextBox x:Name="Secondname_txt" HorizontalAlignment="Left" Margin="101,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
-        <TextBox x:Name="Email_txt" HorizontalAlignment="Left" Margin="101,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
-        <TextBox x:Name="Number_txt" HorizontalAlignment="Left" Margin="101,204,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Firstname_txt" HorizontalAlignment="Left" Margin="101,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Secondname_txt" HorizontalAlignment="Left" Margin="101,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Email_txt" HorizontalAlignment="Left" Margin="101,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Number_txt" HorizontalAlignment="Left" Margin="101,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
         <Label Content="First name" HorizontalAlignment="Left" Margin="12,46,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
         <Label Content="Second name" HorizontalAlignment="Left" Margin="4,90,0,0" VerticalAlignment="Top" Height="31" Width="84"/>
         <Label Content="" HorizontalAlignment="Left" Margin="12,147,0,0" VerticalAlignment="Top" Height="31" Width="11"/>
