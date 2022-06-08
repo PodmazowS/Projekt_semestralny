@@ -46,6 +46,7 @@ namespace Projekt_semestralny
             Secondname_txt.Clear();
             Number_txt.Clear();
             Email_txt.Clear();
+            Search_txt.Clear();
 
         }
         public bool isValid()
@@ -75,9 +76,7 @@ namespace Projekt_semestralny
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-         clearData();
-            
-          
+            clearData();       
         }
 
         private void InsertBtn_Click(object sender, RoutedEventArgs e)
@@ -103,6 +102,31 @@ namespace Projekt_semestralny
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("delete from FirstTable where ID = " +Search_txt.Text+ " ", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record has been deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                con.Close();
+                clearData();
+                LoadGrig();
+                con.Close();
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Not detected" +ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }
