@@ -17,18 +17,22 @@
         <Button x:Name="UpdateBtn" Content="Update record" HorizontalAlignment="Left" Margin="271,309,0,0" VerticalAlignment="Top" Height="47" Width="123" Click="UpdateBtn_Click"/>
         <Button x:Name="DeleteBtn" Content="Delete record" HorizontalAlignment="Left" Margin="452,309,0,0" VerticalAlignment="Top" Height="47" Width="123" RenderTransformOrigin="1.073,0.272" Click="DeleteBtn_Click"/>
         <Button x:Name="ClearBtn" Content="Clear data" HorizontalAlignment="Left" Margin="626,309,0,0" VerticalAlignment="Top" Height="47" Width="123" Click="ClearBtn_Click"/>
-        <TextBox x:Name="Firstname_txt" HorizontalAlignment="Left" Margin="101,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
-        <TextBox x:Name="Secondname_txt" HorizontalAlignment="Left" Margin="101,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
-        <TextBox x:Name="Email_txt" HorizontalAlignment="Left" Margin="101,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
-        <TextBox x:Name="Number_txt" HorizontalAlignment="Left" Margin="101,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="20"/>
-        <Label Content="First name" HorizontalAlignment="Left" Margin="12,46,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
-        <Label Content="Second name" HorizontalAlignment="Left" Margin="4,90,0,0" VerticalAlignment="Top" Height="31" Width="84"/>
+        <TextBox x:Name="Firstname_txt" HorizontalAlignment="Left" Margin="101,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Secondname_txt" HorizontalAlignment="Left" Margin="101,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Email_txt" HorizontalAlignment="Left" Margin="101,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="20"/>
+        <TextBox x:Name="Number_txt" HorizontalAlignment="Left" Margin="101,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="20"/>
+        <Label Content="First name" HorizontalAlignment="Left" Margin="28,20,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
+        <Label Content="Second name" HorizontalAlignment="Left" Margin="17,56,0,0" VerticalAlignment="Top" Height="31" Width="84" RenderTransformOrigin="0.75,0.563"/>
         <Label Content="" HorizontalAlignment="Left" Margin="12,147,0,0" VerticalAlignment="Top" Height="31" Width="11"/>
-        <Label Content="Number" HorizontalAlignment="Left" Margin="12,200,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="12,143,0,0" VerticalAlignment="Top" Height="30" Width="40"/>
-        <DataGrid x:Name="Datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="351,91,31,206"/>
-        <TextBox x:Name="Search_txt" HorizontalAlignment="Left" Margin="190,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="163,259,0,0" VerticalAlignment="Top"/>
+        <Label Content="Number" HorizontalAlignment="Left" Margin="33,137,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="35,90,0,0" VerticalAlignment="Top" Height="30" Width="40"/>
+        <DataGrid x:Name="Datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="372,43,10,254"/>
+        <TextBox x:Name="Search_txt" HorizontalAlignment="Left" Margin="581,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="524,216,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="NubmerCard_txt" Margin="101,180,575,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="RoomType_txt"  HorizontalAlignment="Left" Margin="101,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <Label Content="Card Number&#xD;&#xA;" HorizontalAlignment="Left" Margin="14,179,0,0" VerticalAlignment="Top" Height="23"/>
+        <Label x:Name="Room_type" Content="Room Type&#xD;&#xA;" HorizontalAlignment="Left" Margin="24,218,0,0" VerticalAlignment="Top" Height="26"/>
 
     </Grid>
 </Window>

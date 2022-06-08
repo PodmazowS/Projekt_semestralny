@@ -32,7 +32,7 @@ namespace Projekt_semestralny
 
         public void LoadGrig()
         {
-            SqlCommand cmd = new SqlCommand("select * from FirstTable", con);
+            SqlCommand cmd = new SqlCommand("select * from Table2", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -47,7 +47,8 @@ namespace Projekt_semestralny
             Number_txt.Clear();
             Email_txt.Clear();
             Search_txt.Clear();
-
+            NubmerCard_txt.Clear();
+            RoomType_txt.Clear();
         }
         public bool isValid()
         {
@@ -71,6 +72,16 @@ namespace Projekt_semestralny
                 MessageBox.Show("Name is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
+            if (NubmerCard_txt.Text == String.Empty)
+            {
+                MessageBox.Show("Name is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (RoomType_txt.Text == String.Empty)
+            {
+                MessageBox.Show("Name is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
             return true;
         }
 
@@ -85,12 +96,14 @@ namespace Projekt_semestralny
             {
                 if (isValid())
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO FirstTable VALUES (@FirstName, @SecondName, @Number, @Email)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Table2 VALUES (@FirstName, @SecondName, @Number, @Email, @CardNumber, @RoomType)", con);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@FirstName", Firstname_txt.Text);
                     cmd.Parameters.AddWithValue("@SecondName", Secondname_txt.Text);
                     cmd.Parameters.AddWithValue("@Number", Number_txt.Text);
                     cmd.Parameters.AddWithValue("@Email", Email_txt.Text);
+                    cmd.Parameters.AddWithValue("@CardNumber", NubmerCard_txt.Text);
+                    cmd.Parameters.AddWithValue("@RoomType", RoomType_txt.Text);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -108,7 +121,7 @@ namespace Projekt_semestralny
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("delete from FirstTable where ID = " +Search_txt.Text+ " ", con);
+            SqlCommand cmd = new SqlCommand("delete from Table2 where ID = " + Search_txt.Text+ " ", con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -131,7 +144,7 @@ namespace Projekt_semestralny
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("update FirstTable set FirstName = '" + Firstname_txt.Text+"' ,SecondName = '"+Secondname_txt.Text+"',Email = '"+Email_txt.Text+"', Number = '"+Number_txt.Text+"'WHERE ID = '"+Search_txt.Text+"' ", con);
+            SqlCommand cmd = new SqlCommand("update Table2 set FirstName = '" + Firstname_txt.Text+"' ,SecondName = '"+Secondname_txt.Text+"',Email = '"+Email_txt.Text+ "',  Number = '" + Number_txt.Text+ "',CardNumber = '" + NubmerCard_txt.Text + "', RoomType = '" +RoomType_txt.Text+"' WHERE ID = '" + Search_txt.Text+"' ",  con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -147,6 +160,7 @@ namespace Projekt_semestralny
                 con.Close();
                 clearData();
                 LoadGrig();
+                con.Close();
             }
         }
     }
