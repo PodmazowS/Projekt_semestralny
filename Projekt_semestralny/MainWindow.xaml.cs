@@ -117,8 +117,6 @@ namespace Projekt_semestralny
                 clearData();
                 LoadGrig();
                 con.Close();
-
-
             }
             catch (SqlException ex)
             {
@@ -127,6 +125,28 @@ namespace Projekt_semestralny
             finally
             {
                 con.Close();
+            }
+        }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update FirstTable set FirstName = '" + Firstname_txt.Text+"' ,SecondName = '"+Secondname_txt.Text+"',Email = '"+Email_txt.Text+"', Number = '"+Number_txt.Text+"'WHERE ID = '"+Search_txt.Text+"' ", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record has been update successfully", "Updated", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                clearData();
+                LoadGrig();
             }
         }
     }
