@@ -100,7 +100,7 @@ namespace Projekt_semestralny
                     SqlCommand cmd = new SqlCommand("INSERT INTO Table2 VALUES (@FirstName, @LastName, @Email, @Number, @CardNumber, @RoomType)", con);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@FirstName", Firstname_txt.Text);
-                    cmd.Parameters.AddWithValue("@SecondName", Lastname_txt.Text);
+                    cmd.Parameters.AddWithValue("@LastName", Lastname_txt.Text);
                     cmd.Parameters.AddWithValue("@Email", Email_txt.Text);
                     cmd.Parameters.AddWithValue("@Number", Number_txt.Text);
                     cmd.Parameters.AddWithValue("@CardNumber", NubmerCard_txt.Text);
@@ -168,8 +168,8 @@ namespace Projekt_semestralny
         private void search_txt_TextChanged(object sender, TextChangedEventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Table2 where LastName=@LastName", con);
-            cmd.Parameters.AddWithValue("LastName", search_txt.Text);
+            SqlCommand cmd = new SqlCommand("Select * from Table2 where ID=@ID", con);
+            cmd.Parameters.AddWithValue("ID", search_txt.Text);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

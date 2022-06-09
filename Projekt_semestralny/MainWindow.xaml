@@ -35,7 +35,7 @@
         <Label x:Name="Room_type" Content="Room Type&#xD;&#xA;" HorizontalAlignment="Left" Margin="23,252,0,0" VerticalAlignment="Top" Height="26"/>
         <TextBox x:Name="search_txt" HorizontalAlignment="Left" Margin="660,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="search_txt_TextChanged"/>
         <Label Content="Search" HorizontalAlignment="Left" Margin="610,68,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="___No_Name_" Content="Reception" HorizontalAlignment="Left" Margin="347,10,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Tahoma"/>
+        <Label x:Name="___No_Name_" Content="Booking application" HorizontalAlignment="Left" Margin="338,10,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Tahoma"/>
 
     </Grid>
 </Window>
