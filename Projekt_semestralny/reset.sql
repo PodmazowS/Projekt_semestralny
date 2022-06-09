@@ -1,2 +1,0 @@
-DBCC CHECKIDENT ('[Table2]', RESEED, 0);
-GO
