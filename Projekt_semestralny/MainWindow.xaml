@@ -15,14 +15,14 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="InsertBtn" Content="Insert record" HorizontalAlignment="Left" Margin="246,100,0,0" VerticalAlignment="Top" Height="26" Width="96" Click="InsertBtn_Click" Background="#FF35C6C1"/>
         <Button x:Name="UpdateBtn" Content="Update record" HorizontalAlignment="Left" Margin="246,140,0,0" VerticalAlignment="Top" Height="24" Width="96" Click="UpdateBtn_Click" Background="#FF35C6C1"/>
-        <Button x:Name="DeleteBtn" Content="Delete record" HorizontalAlignment="Left" Margin="246,190,0,0" VerticalAlignment="Top" Height="24" Width="93" RenderTransformOrigin="1.073,0.272" Click="DeleteBtn_Click" Background="#FF35C6C1"/>
-        <Button x:Name="ClearBtn" Content="Clear data" HorizontalAlignment="Left" Margin="246,238,0,0" VerticalAlignment="Top" Height="24" Width="93" Click="ClearBtn_Click" Background="#FF35C6C1"/>
+        <Button x:Name="DeleteBtn" Content="Delete record" HorizontalAlignment="Left" Margin="246,182,0,0" VerticalAlignment="Top" Height="24" Width="93" RenderTransformOrigin="1.073,0.272" Click="DeleteBtn_Click" Background="#FF35C6C1"/>
+        <Button x:Name="ClearBtn" Content="Clear data" HorizontalAlignment="Left" Margin="246,223,0,0" VerticalAlignment="Top" Height="24" Width="93" Click="ClearBtn_Click" Background="#FF35C6C1"/>
         <TextBox x:Name="Firstname_txt" HorizontalAlignment="Left" Margin="100,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
-        <TextBox x:Name="Secondname_txt" HorizontalAlignment="Left" Margin="100,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
+        <TextBox x:Name="Lastname_txt" HorizontalAlignment="Left" Margin="100,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="21"/>
         <TextBox x:Name="Email_txt" HorizontalAlignment="Left" Margin="100,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="20"/>
         <TextBox x:Name="Number_txt" HorizontalAlignment="Left" Margin="100,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="20"/>
         <Label Content="First name" HorizontalAlignment="Left" Margin="27,67,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
-        <Label Content="Second name" HorizontalAlignment="Left" Margin="16,103,0,0" VerticalAlignment="Top" Height="31" Width="84" RenderTransformOrigin="0.75,0.563"/>
+        <Label Content="Last name" HorizontalAlignment="Left" Margin="27,103,0,0" VerticalAlignment="Top" Height="31" Width="84" RenderTransformOrigin="0.75,0.563"/>
         <Label Content="" HorizontalAlignment="Left" Margin="11,194,0,0" VerticalAlignment="Top" Height="31" Width="11"/>
         <Label Content="Number" HorizontalAlignment="Left" Margin="32,176,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="34,137,0,0" VerticalAlignment="Top" Height="30" Width="40"/>
