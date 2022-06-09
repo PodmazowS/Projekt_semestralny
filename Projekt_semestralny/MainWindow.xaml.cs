@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Drawing;
 
 namespace Projekt_semestralny
 {
@@ -96,12 +97,12 @@ namespace Projekt_semestralny
             {
                 if (isValid())
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Table2 VALUES (@FirstName, @SecondName, @Number, @Email, @CardNumber, @RoomType)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Table2 VALUES (@FirstName, @SecondName, @Email, @Number, @CardNumber, @RoomType)", con);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@FirstName", Firstname_txt.Text);
                     cmd.Parameters.AddWithValue("@SecondName", Secondname_txt.Text);
-                    cmd.Parameters.AddWithValue("@Number", Number_txt.Text);
                     cmd.Parameters.AddWithValue("@Email", Email_txt.Text);
+                    cmd.Parameters.AddWithValue("@Number", Number_txt.Text);
                     cmd.Parameters.AddWithValue("@CardNumber", NubmerCard_txt.Text);
                     cmd.Parameters.AddWithValue("@RoomType", RoomType_txt.Text);
                     con.Open();
@@ -164,5 +165,16 @@ namespace Projekt_semestralny
             }
         }
 
+        private void search_txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Table2 where ID=@ID", con);
+            cmd.Parameters.AddWithValue("ID", search_txt.Text);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Datagrid.ItemsSource = dt.DefaultView;
+            con.Close();
+        }
     }
 }
